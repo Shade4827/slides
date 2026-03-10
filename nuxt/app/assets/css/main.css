@@ -1,1 +1,17 @@
 @import 'tailwindcss';
+
+body {
+  background: #252525;
+  color: #fff;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: underline dotted;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
+}
+
+section {
+  padding: 1rem;
+}
