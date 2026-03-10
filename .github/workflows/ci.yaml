@@ -1,0 +1,33 @@
+name: Nuxt Lint
+
+on:
+  pull_request:
+    paths:
+      - "nuxt/**"
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: nuxt
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: "pnpm"
+          cache-dependency-path: ./nuxt/pnpm-lock.yaml
+
+      - run: pnpm install
+      - run: pnpm run lint
