@@ -2,7 +2,7 @@
 const route = useRoute()
 
 const slideUrl = computed(() => {
-  return `/slides/${route.params.slideId}/index.html`
+  return `/slides/${route.params.slideId}/`
 })
 </script>
 

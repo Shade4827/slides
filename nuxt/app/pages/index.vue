@@ -4,7 +4,7 @@ import type { SlideCard } from '~/types/SlideCard'
 const slides: SlideCard[] = [
   {
     title: 'sample',
-    link: '/sample',
+    link: '/slide-view/sample',
     thumbnail: '/favicon.ico',
     details: 'This is the sample slide',
   },
