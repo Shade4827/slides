@@ -1,0 +1,33 @@
+/* Increase slide body font size for better readability */
+:root {
+  font-size: 16px; /* base scale */
+}
+
+/* Main content (paragraphs, lists) */
+.slide .content,
+.slide p,
+.slide li {
+  font-size: 1.6rem; /* ~32px on typical screens */
+  line-height: 1.6;
+}
+
+/* Keep headings at default sizes to preserve original layout */
+/* (No explicit h1/h2 sizing so theme defaults remain) */
+
+@media (max-width: 700px) {
+  :root { font-size: 18px }
+  .slide .content, .slide p, .slide li { font-size: 1.25rem }
+}
+
+h1 {
+  background-color: #20b2aa;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+li {
+  font-size: 20px;
+}
