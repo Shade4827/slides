@@ -1,5 +1,16 @@
+<script setup lang="ts">
+const route = useRoute()
+
+const slideUrl = computed(() => {
+  return `/slides/${route.params.slideId}/index.html`
+})
+</script>
+
 <template>
   <div>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <iframe
+      :src="slideUrl"
+      style="width:100%;height:100vh;border:none"
+    />
   </div>
 </template>
