@@ -10,7 +10,7 @@ const { slideCard } = defineProps<Props>()
 
 <template>
   <div>
-    <a :href="slideCard.link" class="block">
+    <a :href="`/slide-view/${slideCard.link}`" class="block">
       <div class="w-full h-48 bg-gray-200 rounded-lg overflow-hidden">
         <img
           v-if="slideCard.thumbnail"

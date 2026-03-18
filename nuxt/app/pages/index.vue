@@ -3,18 +3,18 @@ import type { SlideCard } from '~/types/SlideCard'
 
 const slides: SlideCard[] = [
   {
-    title: 'Slide 1',
-    link: '/slide-1',
+    title: 'sample',
+    link: 'sample',
     thumbnail: '/favicon.ico',
-    details: 'This is the first slide',
+    details: 'This is the sample slide',
   },
   {
-    title: 'Slide 2',
-    link: '/slide-2',
+    title: 'Why Choose Sapporo',
+    link: 'why-choose-sapporo',
   },
   {
     title: 'Slide 3',
-    link: '/slide-3',
+    link: 'slide-3',
   },
 ]
 </script>

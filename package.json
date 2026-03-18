@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build:slides": "bash scripts/build-slides.sh",
+    "build": "pnpm build:slides && pnpm --filter nuxt build"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.14.1",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/theme-seriph": "^0.25.0"
+  }
+}
