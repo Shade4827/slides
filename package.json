@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build:slides": "bash scripts/build-slides.sh",
+    "build:slides": "node scripts/build-slides.mjs",
     "build": "pnpm build:slides && pnpm --filter nuxt build"
   },
   "devDependencies": {
