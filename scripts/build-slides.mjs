@@ -25,6 +25,13 @@ for (const dir of dirs) {
     { stdio: 'inherit' }
   )
 
+  const thumbnailPath = path.join(OUTPUT_DIR, dir, 'thumbnail')
+
+  execSync(
+    `pnpm slidev export ${slideMd} --format png --range 1 --output ${thumbnailPath}`,
+    { stdio: 'inherit' }
+  )
+
   const content = fs.readFileSync(slideMd, 'utf-8')
   const { data } = matter(content)
   const title = data.title || dir
@@ -33,6 +40,7 @@ for (const dir of dirs) {
     id: dir,
     title,
     link: dir,
+    thumbnail: `/slides/${dir}/thumbnail/1.png`,
   })
 }
 
