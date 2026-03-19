@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { execSync } from 'child_process'
+import matter from 'gray-matter'
 
 const ROOT = process.cwd()
 const SLIDES_DIR = path.join(ROOT, 'slides/slides')
@@ -25,9 +26,8 @@ for (const dir of dirs) {
   )
 
   const content = fs.readFileSync(slideMd, 'utf-8')
-  const titleMatch = content.match(/^#\s+(.*)/m)
-
-  const title = titleMatch ? titleMatch[1] : dir
+  const { data } = matter(content)
+  const title = data.title || dir
 
   slides.push({
     id: dir,

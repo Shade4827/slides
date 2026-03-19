@@ -6,6 +6,7 @@
   "devDependencies": {
     "@slidev/cli": "^52.14.1",
     "@slidev/theme-default": "^0.25.0",
-    "@slidev/theme-seriph": "^0.25.0"
+    "@slidev/theme-seriph": "^0.25.0",
+    "gray-matter": "^4.0.3"
   }
 }
