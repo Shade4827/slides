@@ -32,7 +32,7 @@ for (const dir of dirs) {
   slides.push({
     id: dir,
     title,
-    url: `/${dir}/`,
+    link: dir,
   })
 }
 
