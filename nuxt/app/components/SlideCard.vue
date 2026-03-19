@@ -17,10 +17,9 @@ const { slideCard } = defineProps<Props>()
           :src="slideCard.thumbnail"
           alt="Thumbnail"
           class="w-full h-full object-cover"
-        />
+        >
       </div>
       <h2 class="text-xl font-semibold mt-4">{{ slideCard.title }}</h2>
-      <p v-if="slideCard.details" class="mt-2">{{ slideCard.details }}</p>
     </a>
   </div>
 </template>

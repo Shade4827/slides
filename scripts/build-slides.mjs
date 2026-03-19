@@ -35,12 +35,14 @@ for (const dir of dirs) {
   const content = fs.readFileSync(slideMd, 'utf-8')
   const { data } = matter(content)
   const title = data.title || dir
+  const info = data.info || ''
 
   slides.push({
     id: dir,
     title,
     link: dir,
     thumbnail: `/slides/${dir}/thumbnail/1.png`,
+    info
   })
 }
 

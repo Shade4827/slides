@@ -2,8 +2,7 @@
 theme: seriph
 background: /images/cover.jpg
 title: 田舎から札幌に移住して半年
-info: |
-  札幌での生活についてのプレゼンテーション
+info: 札幌市ビジネスセッション＆交流会「エンジニアはなぜ札幌を選ぶのか ～人と企業が動く理由～」で、田舎から札幌市に移住したエンジニアとして登壇
 class: text-center
 drawings:
   persist: false
