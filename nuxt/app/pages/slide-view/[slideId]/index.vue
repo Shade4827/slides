@@ -15,14 +15,18 @@ if (!slide) {
 </script>
 
 <template>
-  <div class="w-full max-w-5xl mx-auto mb-4">
-    <div class="aspect-video w-full">
-      <iframe
-        v-if="slideUrl"
-        :key="slideUrl"
-        :src="slideUrl"
-        class="w-full h-full shadow-lg"
-      />
+  <div>
+    <h2 class="text-3xl font-bold mb-3">{{ slide?.title }}</h2>
+    <p class="text-gray-400 mb-6">{{ slide?.info }}</p>
+    <div class="w-full max-w-5xl mx-auto mb-4">
+      <div class="aspect-video w-full">
+        <iframe
+          v-if="slideUrl"
+          :key="slideUrl"
+          :src="slideUrl"
+          class="w-full h-full shadow-lg"
+        />
+      </div>
     </div>
-  </div>
+    </div>
 </template>
