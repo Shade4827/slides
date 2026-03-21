@@ -16,7 +16,10 @@ if (!slide) {
 
 <template>
   <div>
-    <h2 class="text-3xl font-bold mb-3">{{ slide?.title }}</h2>
+    <div class="flex gap-4 mb-3">
+      <h2 class="text-3xl font-bold">{{ slide?.title }}</h2>
+      <CopyLinkIcon :link="slide?.link || ''" :size="'2.5em'" />
+    </div>
     <p class="text-gray-400 mb-6">{{ slide?.info }}</p>
     <div class="w-full max-w-5xl mx-auto mb-4">
       <div class="aspect-video w-full">
@@ -28,5 +31,5 @@ if (!slide) {
         />
       </div>
     </div>
-    </div>
+  </div>
 </template>
