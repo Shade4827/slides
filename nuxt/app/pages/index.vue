@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SlideCard } from '~/types/SlideCard'
 
-const { data: slides } = await useFetch<SlideCard[]>(`${useRequestURL().origin}/slides.json`)
+const { data: slides } = await useFetch<SlideCard[]>('/api/slides')
 </script>
 
 <template>
