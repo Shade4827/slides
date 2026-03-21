@@ -9,6 +9,7 @@ drawings:
 transition: slide-left
 mdc: true
 duration: 35min
+routerMode: hash
 ---
 
 # **田舎から札幌に移住して半年**
