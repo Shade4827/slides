@@ -15,12 +15,14 @@ if (!slide) {
 </script>
 
 <template>
-  <div>
-    <iframe
-      v-if="slideUrl"
-      :key="slideUrl"
-      :src="slideUrl"
-      style="width:100%;height:100vh;border:none"
-    />
+  <div class="w-full max-w-5xl mx-auto mb-4">
+    <div class="aspect-video w-full">
+      <iframe
+        v-if="slideUrl"
+        :key="slideUrl"
+        :src="slideUrl"
+        class="w-full h-full shadow-lg"
+      />
+    </div>
   </div>
 </template>
