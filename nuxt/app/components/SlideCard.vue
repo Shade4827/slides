@@ -12,7 +12,7 @@ const { slideCard } = defineProps<Props>()
   <div class="mb-2">
     <NuxtLink
       :to="`/slide-view/${slideCard.link}`"
-      class="transition hover:opacity-50  block"
+      class="transition hover:opacity-50 block"
     >
       <div class="w-full h-48 bg-gray-200 rounded-lg overflow-hidden mb-2">
         <img
@@ -25,7 +25,7 @@ const { slideCard } = defineProps<Props>()
     </NuxtLink>
     <div class="flex gap-2">
       <h2 class="text-xl font-semibold">{{ slideCard.title }}</h2>    
-      <Icon name="material-symbols:link" style="color: gray" size="2em"/>
+      <CopyLinkIcon :link="slideCard.link" />
     </div>
   </div>
 </template>
