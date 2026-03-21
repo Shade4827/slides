@@ -16,11 +16,17 @@ if (!slide) {
 
 <template>
   <div>
-    <iframe
-      v-if="slideUrl"
-      :key="slideUrl"
-      :src="slideUrl"
-      style="width:100%;height:100vh;border:none"
-    />
-  </div>
+    <h2 class="text-3xl font-bold mb-3">{{ slide?.title }}</h2>
+    <p class="text-gray-400 mb-6">{{ slide?.info }}</p>
+    <div class="w-full max-w-5xl mx-auto mb-4">
+      <div class="aspect-video w-full">
+        <iframe
+          v-if="slideUrl"
+          :key="slideUrl"
+          :src="slideUrl"
+          class="w-full h-full shadow-lg"
+        />
+      </div>
+    </div>
+    </div>
 </template>

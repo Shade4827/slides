@@ -6,7 +6,7 @@ const { data: slides } = await useFetch<SlideCard[]>('/api/slides')
 
 <template>
   <section>
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="mb-8 grid grid-cols-1 md:grid-cols-3 gap-4">
       <SlideCard
         v-for="(slide, index) in slides"
         :key="index"
