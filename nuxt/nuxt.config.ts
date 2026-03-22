@@ -7,22 +7,26 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['@/assets/css/main.css'],
-
   vite: {
     plugins: [tailwindcss()],
   },
-
   modules: [
     '@nuxt/eslint',
     '@nuxt/icon',
   ],
-
+  nitro: {
+    preset: 'cloudflare-pages'
+  },
+  routeRules: {
+    '/slides/**': {
+      static: true
+    }
+  },
   runtimeConfig: {
     public: {
       siteUrl: siteUrl,
     }
   },
-
   app: {
     head: {
       title: 'slides.shade4827.net',
@@ -44,5 +48,5 @@ export default defineNuxtConfig({
         { name: 'twitter:title', content: 'slides.shade4827.net' },
       ]
     }
-  }
+  },
 })
