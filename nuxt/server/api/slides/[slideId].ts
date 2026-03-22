@@ -1,16 +1,12 @@
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
 import type { SlideCard } from '~/types/SlideCard'
+
+const config = useRuntimeConfig()
 
 export default defineEventHandler(async (event): Promise<SlideCard> => {
   const slideId = getRouterParam(event, 'slideId')
-
-  const filePath = join(process.cwd(), 'public/slides.json')
-  const json = await readFile(filePath, 'utf-8')
-  const slides = JSON.parse(json) as SlideCard[]
-
+  const slides: SlideCard[] = await $fetch(`${config.public.siteUrl}/slides.json`)
   const slide: SlideCard | undefined = slides.find((s: SlideCard) => s.id === slideId)
-
+  
   if (!slide) {
     throw createError({ statusCode: 404 })
   }
