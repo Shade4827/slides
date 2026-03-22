@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { SlideCard } from '~/types/SlideCard'
 const route = useRoute()
+const config = useRuntimeConfig()
 
 const slideUrl = computed(() => {
   if (!route.params.slideId) return undefined
@@ -12,6 +13,32 @@ const { data: slide } = await useFetch<SlideCard>(`/api/slides/${route.params.sl
 if (!slide) {
   throw createError({ statusCode: 404 })
 }
+
+useHead({
+  title: slide.value?.title || 'Slide',
+  meta: [
+    {
+      name: 'description',
+      content: slide.value?.info || '',
+    },
+    {
+      name: 'og:title',
+      content: slide.value?.title || '',
+    },
+    {
+      name: 'og:description',
+      content: slide.value?.info || '',
+    },
+    {
+      name: 'og:image',
+      content: slide.value?.thumbnail ? `${config.public.siteUrl}${slide.value.thumbnail}` : '',
+    },
+    {
+      name: 'twitter:title',
+      content: slide.value?.title || '',
+    }
+  ],
+})
 </script>
 
 <template>
