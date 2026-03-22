@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build:slides": "node scripts/build-slides.mjs",
-    "build": "pnpm build:slides && pnpm --filter nuxt build"
+    "build": "pnpm --filter nuxt build"
   },
   "devDependencies": {
     "@slidev/cli": "^52.14.1",
