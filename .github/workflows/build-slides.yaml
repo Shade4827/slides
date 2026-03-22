@@ -7,12 +7,17 @@ on:
       - 'nuxt/public/slides/**'
       - 'nuxt/public/slides.json'
 
+permissions:
+  contents: write
+
 jobs:
   build-slides:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: true
 
       - uses: pnpm/action-setup@v4
         with:
@@ -34,4 +39,4 @@ jobs:
           git add nuxt/public/slides
           git add nuxt/public/slides.json
           git commit -m "chore: update slides assets" || echo "No changes"
-          git push
+          git push origin HEAD:deploy
