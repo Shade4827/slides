@@ -29,3 +29,4 @@ image: /images/icon.png
   - Nuxt, Ruby on Rails
 - 北海道出身・在住
 - カードゲーム、コミュニティ活動
+- https://www.shade4827.net

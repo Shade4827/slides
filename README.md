@@ -43,19 +43,24 @@ pnpm build
 
 ## スライド追加方法
 
-1. slides/slides/ にディレクトリを作成
-2. slides.md を作成
+1. slides/slides/ にディレクトリを作成し、slides.md を作成。もしくはtemplateディレクトリをコピー
 
 ```
 slides/slides/my-slide/
   └── slides.md
 ```
 
-3. CIが自動で以下を生成
+2. CIが自動で以下を生成
     - HTML
     - サムネイル画像
     - slides.json
-4. /slide-view/my-slide/ で公開される
+3. /slide-view/my-slide/ で公開される
+
+### localでのスライド確認方法
+
+```
+pnpm dev slides/[directory]/slides.md
+```
 
 ## デプロイフロー
 
