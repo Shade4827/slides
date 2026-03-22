@@ -39,4 +39,4 @@ jobs:
           git add nuxt/public/slides
           git add nuxt/public/slides.json
           git commit -m "chore: update slides assets" || echo "No changes"
-          git push origin HEAD:deploy
+          git push origin HEAD:deploy --force
