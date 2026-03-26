@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import type { SlideCard } from '~/types/SlideCard'
 
-const { data: slides } = await useFetch<SlideCard[]>('/api/slides')
+const { apiFetch } = useApiFetch()
+
+const slides = await apiFetch<SlideCard[]>(`/slides.json?t=${Date.now()}`)
 </script>
 
 <template>
