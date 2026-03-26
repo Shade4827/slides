@@ -22,12 +22,17 @@ image: /images/icon.png
 
 # **かげろん** です
 
-- Webエンジニア
-  - フロントエンド寄り
-  - Nuxt, Ruby on Rails
+- フロントエンド寄りWebエンジニア
 - 北海道出身・在住
 - カードゲーム、コミュニティ活動
 - https://www.shade4827.net
+
+<br>
+<br>
+
+### 最近のハイライト
+- 妹のWindows10の復旧に失敗
+- 64GBのモバイル端末は厳しい
 
 ---
 transition: slide-left
