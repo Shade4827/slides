@@ -8,11 +8,19 @@ const slideUrl = computed(() => {
   return `/slides/${route.params.slideId}/`
 })
 
-const { data: slide } = await useFetch<SlideCard>(`/api/slides/${route.params.slideId}`)
+const { apiFetch } = useApiFetch()
 
-if (!slide) {
-  throw createError({ statusCode: 404 })
-}
+const { data: slide } = await useAsyncData('slide-detail', async () => {
+  const slides = await apiFetch<SlideCard[]>(`/slides.json?t=${Date.now()}`)
+
+  const found: SlideCard | undefined  = slides.find((s: SlideCard) => s.id === route.params.slideId)
+
+  if (!found) {
+    throw createError({ statusCode: 404 })
+  }
+
+  return found
+})
 
 useHead({
   title: slide.value?.title || 'Slide',
@@ -31,7 +39,7 @@ useHead({
     },
     {
       name: 'og:image',
-      content: slide.value?.thumbnail ? `${config.public.siteUrl}${slide.value.thumbnail}` : '',
+      content: slide.value?.thumbnail ? `${config.public.siteUrl}${slide.value?.thumbnail}` : '',
     },
     {
       name: 'twitter:title',

@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
 
-const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://slides.shade4827.net'
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000/'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
