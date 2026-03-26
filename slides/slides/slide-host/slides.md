@@ -40,11 +40,11 @@ transition: slide-left
 
 # Slidevでスライドを作っています
 
-## <a href="https://ja.sli.dev/">Slidev</a> とは
+## <a href="https://ja.sli.dev/" target="_blank" rel="noopener noreferrer">Slidev</a> とは
 <br>
 
 - スライドをmarkdownで書ける
-  - AIに作らせても悪い意味でのAIっぽさが低減できる
+  - AIに作らせても悪い意味でのAIっぽさが低減しやすそう
 - Vue.jsで動いている
   - Vueのコンポーネントやロジック部分を利用できる
   - Webで実現できることをスライド上で実現できる
@@ -61,10 +61,6 @@ transition: slide-left
 
 # 作ったスライドをWebに公開したい
 
-## どういう方法があるか
-
-<br>
-
 - PDFとしてエクスポートし、何らかのサービスにアップロード
   - ❌ Webである良さが失われる
 - Webサイトとして公開
@@ -72,7 +68,9 @@ transition: slide-left
 
 <br>
 
-複数のスライドを管理したり、一覧を作るにはSlidevを取りまとめる何かが必要
+<span v-click class="font-bold text-xl underline">▶︎ 複数のスライドを管理したり、一覧を作るにはSlidevを取りまとめる何かが必要</span>
+<br>
+<span v-click class="font-bold text-2xl text-green-500">→ Nuxtを使おう</span>
 
 ---
 transition: slide-left
@@ -80,8 +78,8 @@ transition: slide-left
 
 # 構成
 
-- Nuxtを使用してWebアプリを作成
-- Cloudflare Pages上にデプロイ
+- GitHub ActionsでSlidevをビルドし、Nuxt側に配置してdeployブランチにcommit
+- Nuxtでページを作り、ビルドされたスライドを表示
 
 <br>
 
@@ -100,9 +98,9 @@ transition: slide-left
 ---
 
 # Slidevをビルドし、Nuxt側に配置までができない
+- <a href="https://ja.sli.dev/guide/hosting" target="_blank" rel="noopener noreferrer">ビルドについて解説されているドキュメントがある</a>
 - rootディレクトリからだとビルド対象の明示が必要
 - 出力先もnuxt/public配下にして、Nuxtから読み込めるようにしたい
-- <a href="https://ja.sli.dev/guide/hosting" target="_blank" rel="noreffer noopener">ビルドについて解説</a>されているが、うまくビルドできなかった
 
 <br>
 
@@ -130,7 +128,8 @@ transition: slide-left
 ---
 
 # 解決: rootディレクトリからビルド
-- `pnpm slidev build ${dir}/slides.md --base /slides/${dir}/ --out root/nuxt/public/slides/${dir}`
+- 直下以外でのビルドには `@slidev/cli` が必要で、実行にはPlaywrightが必要
+- Cloudflare上でブラウザインストールが<span class="line-through">面倒だった</span>難しかったのでGitHub Actions内で実行
 
 <br>
 
@@ -151,7 +150,7 @@ root/
 │           └── slides.md
 ├── scripts/
 │   └── build-slides.mjs  # ビルドスクリプトを作成
-└── package.json
+└── package.json          # @slidev/cli, playwright-chromium を追加
 </pre>
 </div>
 
@@ -162,19 +161,20 @@ transition: slide-left
 # ブラウザバック・フォワードするとエラーが発生する
 - public配下に置いたHTMLは `/index.html` の形式でアクセス可能
 - そのままアクセスしても表示できるので、iframeを使うことで個別のページの中にも表示可能
-- `/slide-view/[slideId]/` 内で表示
-- 普通に表示させることはできたが、ブラウザバック・フォワードすると表示できなくなる
+- Nuxtのページとして `/slide-view/[slideId]/` を用意し、この中で表示
+- 表示させることはできたが、ブラウザバック・フォワードすると表示できなくなる
 
 ---
 transition: slide-left
 ---
 
 # 問題点: SlidevのrouterModeが history になっていた
-- Slidevではvue-routerを使用して、スライド各ページをルーティングしている
+- Slidevでは<a href="https://router.vuejs.org/" target="_blank" rel="noopener noreferrer">vue-router</a>を使用して、スライド各ページをルーティングしている
 - historyだと通常のWebページのようにURLが設定され、ページ遷移時にサーバーにリクエスト
   - しかし、実際にはリクエスト先のページが存在していない
   - SPAなのにMPAとして扱ってしまい、エラーが発生
 - hashにするとURLが `/index.html/#/1` のようになり、`#` 以降はリクエストに含まれない
+  - ページをめくるごとのリクエストがなくなるので、エラーが発生しなくなった
   - SEO的には良くないらしい
 
 <br>
