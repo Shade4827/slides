@@ -5,7 +5,7 @@ const config = useRuntimeConfig()
 
 const slideUrl = computed(() => {
   if (!route.params.slideId) return undefined
-  return `/slides/${route.params.slideId}/`
+  return `/slides/${route.params.slideId}?t=${Date.now()}/`
 })
 
 const { apiFetch } = useApiFetch()
