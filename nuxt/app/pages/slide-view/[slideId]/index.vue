@@ -53,7 +53,7 @@ useHead({
   <div>
     <div class="flex gap-4 mb-3">
       <h2 class="text-3xl font-bold">{{ slide?.title }}</h2>
-      <CopyLinkIcon :link="slide?.link || ''" :size="'2.5em'" />
+      <CopyLinkIcon :link="slide?.link || ''" :size="'2.5em'" class="w-6 h-6 shrink-0" />
     </div>
     <p class="text-gray-400 mb-6">{{ slide?.info }}</p>
     <div class="w-full max-w-5xl mx-auto mb-4">

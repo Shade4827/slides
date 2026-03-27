@@ -24,8 +24,8 @@ const { slideCard } = defineProps<Props>()
       </div>
     </NuxtLink>
     <div class="flex gap-2">
-      <h2 class="text-xl font-semibold">{{ slideCard.title }}</h2>    
-      <CopyLinkIcon :link="slideCard.link" />
+      <p class="text-xl font-semibold flex-1 min-w-0 truncate">{{ slideCard.title }}</p>    
+      <CopyLinkIcon :link="slideCard.link" class="w-6 h-6 shrink-0"/>
     </div>
   </div>
 </template>
