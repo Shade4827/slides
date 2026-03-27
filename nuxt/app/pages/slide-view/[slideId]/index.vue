@@ -22,6 +22,16 @@ const { data: slide } = await useAsyncData('slide-detail', async () => {
   return found
 })
 
+const formatedDateString = computed<string | undefined>(() => {
+  if(!slide.value?.date) return undefined
+  const date = new Date(slide.value?.date)
+  return date.toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  })
+})
+
 useHead({
   title: slide.value?.title || 'Slide',
   meta: [
@@ -51,11 +61,12 @@ useHead({
 
 <template>
   <div>
+    <p class="text-sm text-gray-400 mb-1">{{ formatedDateString }}</p>
     <div class="flex gap-4 mb-3">
       <h2 class="text-3xl font-bold">{{ slide?.title }}</h2>
       <CopyLinkIcon :link="slide?.link || ''" :size="'2.5em'" class="w-6 h-6 shrink-0" />
     </div>
-    <p class="text-gray-400 mb-6">{{ slide?.info }}</p>
+    <p class="text-lg text-gray-400 mb-6">{{ slide?.info }}</p>
     <div class="w-full max-w-5xl mx-auto mb-4">
       <div class="aspect-video w-full">
         <iframe
