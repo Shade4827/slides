@@ -4,5 +4,5 @@ export interface SlideCard {
   link: string
   thumbnail: string
   info?: string
-  date?: string
+  date: string
 }
