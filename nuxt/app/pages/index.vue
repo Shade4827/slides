@@ -3,7 +3,11 @@ import type { SlideCard } from '~/types/SlideCard'
 
 const { apiFetch } = useApiFetch()
 
-const slides = await apiFetch<SlideCard[]>(`/slides.json?t=${Date.now()}`)
+const { data: slides } = await useAsyncData('slide-list', async () => {
+  const slides = await apiFetch<SlideCard[]>(`/slides.json?t=${Date.now()}`)
+
+  return slides.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+})
 </script>
 
 <template>

@@ -36,13 +36,15 @@ for (const dir of dirs) {
   const { data } = matter(content)
   const title = data.title || dir
   const info = data.info || ''
+  const date = data.date || ''
 
   slides.push({
     id: dir,
     title,
     link: dir,
     thumbnail: `/slides/${dir}/thumbnail/1.png`,
-    info
+    info,
+    date
   })
 }
 
