@@ -6,7 +6,7 @@ const { apiFetch } = useApiFetch()
 const { data: slides } = await useAsyncData('slide-list', async () => {
   const slides = await apiFetch<SlideCard[]>(`/slides.json?t=${Date.now()}`)
 
-  return slides.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+  return slides.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 })
 </script>
 
