@@ -3,6 +3,7 @@ theme: seriph
 background: https://cover.sli.dev
 title: タイトル
 info: 説明
+date: 2020-01-01
 class: text-center
 drawings:
   persist: false
