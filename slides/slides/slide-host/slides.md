@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: https://cover.sli.dev
+background: /images/cover.jpg
 title: Nuxt + SlidevでスライドをWeb上に公開する
 info: このサイトの作成した動機やその際の課題点などをまとめました
 date: 2026-03-29
