@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/icon',
+    'reka-ui/nuxt',
   ],
   nitro: {
     preset: 'cloudflare-pages'
@@ -26,6 +27,12 @@ export default defineNuxtConfig({
     public: {
       siteUrl: siteUrl,
     }
+  },
+  components : {
+    dirs: [
+      '~/components',
+      '~/components/demo',
+    ],
   },
   app: {
     head: {
