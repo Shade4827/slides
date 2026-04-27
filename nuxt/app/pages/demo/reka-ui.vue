@@ -13,6 +13,6 @@ const query = ref('')
     <h1 class="text-3xl font-bold">Reka UI Demo</h1>
     <RekaDialog />
     <RekaSuggest />
-    <Rekaas-child v-model="query"/>
+    <RekaAsChild v-model="query"/>
   </div>
 </template>
