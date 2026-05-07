@@ -14,7 +14,7 @@ const { slideCard } = defineProps<Props>()
       :to="`/slide-view/${slideCard.link}`"
       class="transition hover:opacity-50 block"
     >
-      <div class="w-full h-48 bg-gray-200 rounded-lg overflow-hidden mb-2">
+      <div class="w-full h-60 bg-gray-200 rounded-lg overflow-hidden mb-2">
         <img
           v-if="slideCard.thumbnail"
           :src="slideCard.thumbnail"
