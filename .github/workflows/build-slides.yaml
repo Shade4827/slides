@@ -25,11 +25,14 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
-          cache: 'pnpm'
+          node-version: 22
+          cache: pnpm
 
       - run: pnpm install
-      - run: pnpm exec playwright install --with-deps
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+
+      - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm build:slides
 
       - name: Commit generated files
