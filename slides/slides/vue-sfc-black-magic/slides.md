@@ -33,7 +33,27 @@ image: /images/icon.png
 <br>
 
 ### 最近のハイライト
-- 平岡樹芸センター(みどりーむ)を散歩しました
+- <a href="https://maps.app.goo.gl/qPD5zfXren3BhQqD6" target="_blank" rel="noopener norefferer">平岡樹芸センター(みどりーむ)</a>を散歩しました
+
+---
+transition: slide-left
+---
+
+# 平岡樹芸センター(みどりーむ) 情報
+
+<div class="flex justify-center gap-4">
+  <img
+    src="/images/midream1.jpg"
+    alt=""
+    class="h-108 w-auto"
+  />
+
+  <img
+    src="/images/midream2.jpg"
+    alt=""
+    class="h-96 w-auto"
+  />
+</div>
 
 ---
 transition: slide-left
