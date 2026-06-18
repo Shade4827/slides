@@ -1,8 +1,8 @@
 ---
 theme: seriph
-title: Vue SFCの黒魔術に遭遇したので原理を理解する
-info: styleタグにコメントを書いただけで、
-date: 2020-01-01
+title: Vue SFC slottedの黒魔術を理解する
+info: styleタグに:slottedと書いただけでCSSファイル内で使用可能になる現象に遭遇しました。Vue SFCのコンパイラがどのように解釈しているのかを追って、なぜこうなったかを理解します。
+date: 2026-06-20
 class: text-center
 drawings:
   persist: false
@@ -12,7 +12,7 @@ duration: 35min
 routerMode: hash
 ---
 
-<Cover title="Vue SFCの黒魔術に遭遇したので原理を理解する" />
+<Cover title="Vue SFC slottedの黒魔術を理解する" />
 
 ---
 transition: slide-left
