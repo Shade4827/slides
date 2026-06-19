@@ -4,11 +4,11 @@
     "build": "pnpm --filter nuxt build"
   },
   "devDependencies": {
-    "@slidev/cli": "^52.14.1",
+    "@slidev/cli": "^52.16.0",
     "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "^0.25.0",
     "gray-matter": "^4.0.3",
-    "playwright-chromium": "^1.58.2",
+    "playwright-chromium": "^1.61.0",
     "qrcode": "^1.5.4"
   }
 }

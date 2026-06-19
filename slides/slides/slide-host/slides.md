@@ -84,7 +84,7 @@ transition: slide-left
 
 <br>
 
-<img src="/images/diagram.png">
+<img src="./public/images/diagram.png">
 
 ---
 transition: slide-left
