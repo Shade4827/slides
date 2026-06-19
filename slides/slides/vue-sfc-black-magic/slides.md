@@ -43,13 +43,13 @@ transition: slide-left
 
 <div class="flex justify-center gap-4">
   <img
-    src="/images/midream1.jpg"
+    src="./public/images/midream1.jpg"
     alt=""
     class="h-108 w-auto"
   />
 
   <img
-    src="/images/midream2.jpg"
+    src="./public/images/midream2.jpg"
     alt=""
     class="h-96 w-auto"
   />
@@ -98,6 +98,7 @@ url: https://ja.vuejs.org/api/sfc-css-features.html#slotted-selectors
 
 ---
 transition: slide-left
+layout: two-cols-header
 ---
 
 # 黒魔術との遭遇
@@ -105,9 +106,8 @@ transition: slide-left
   - `:slotted` はVue SFCの機能であるため、.cssファイルでは使用できないはず
   - 公式ドキュメントでは `<style>` 内の記述しか紹介されていない
 
-<br>
+::left::
 
-<div class="grid grid-cols-2 gap-4">
 ```vue
 /* SampleComponent.vue */
 <template>
@@ -121,15 +121,24 @@ transition: slide-left
 </style>
 ```
 
+::right::
+
 ```css
 /* SampleComponent.css */
 :slotted(li) {
   color: red;
 }
 ```
-</div>
 
+<br>
+<br>
 <p v-click class="font-bold text-2xl text-center">なぜこうなる?🤔</p>
+
+<style>
+.two-cols-header {
+  column-gap: 20px; /* 必要に応じてギャップサイズを調整してください */
+}
+</style>
 
 ---
 transition: slide-left
