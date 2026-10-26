@@ -1,0 +1,6 @@
+shamefullyHoist: true
+autoInstallPeers: true
+allowBuilds:
+  esbuild: true
+overrides:
+  "@comark/markdown-it>markdown-it": "14.1.1"
