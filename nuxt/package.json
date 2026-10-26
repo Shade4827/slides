@@ -7,6 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "deploy": "nuxt build && wrangler --cwd .output deploy",
+    "preview:cf": "wrangler --cwd .output dev",
     "postinstall": "nuxt prepare",
     "lint": "vp lint --type-aware . && eslint .",
     "lint:fix": "vp lint --type-aware . --fix --fix-suggestions && eslint . --fix",
@@ -30,7 +32,8 @@
     "eslint-plugin-oxlint": "^1.89.0",
     "rolldown": "~1.2.15",
     "typescript": "^5.9.3",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "wrangler": "^4.152.0"
   },
   "packageManager": "pnpm@11.17.0"
 }

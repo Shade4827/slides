@@ -12,7 +12,14 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/eslint', '@nuxt/icon', 'reka-ui/nuxt'],
   nitro: {
-    preset: 'cloudflare-pages',
+    preset: 'cloudflare_module',
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true,
+      wrangler: {
+        name: 'slides',
+      },
+    },
   },
   routeRules: {
     '/slides/**': {
