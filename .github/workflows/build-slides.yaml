@@ -39,7 +39,7 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add nuxt/public/slides
-          git add nuxt/public/slides.json
+          git add -f nuxt/public/slides
+          git add -f nuxt/public/slides.json
           git commit -m "chore: update slides assets" || echo "No changes"
           git push origin HEAD:deploy --force
