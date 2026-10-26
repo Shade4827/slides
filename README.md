@@ -26,7 +26,7 @@ pnpm install
 ## local
 
 ```bash
-pnpm --filter nuxt dev
+pnpm --dir nuxt dev
 ```
 
 ## スライド生成

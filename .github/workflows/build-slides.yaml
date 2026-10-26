@@ -19,13 +19,13 @@ jobs:
         with:
           persist-credentials: true
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
-          version: 9
+          version: 11.17.0
 
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24.22.1
           cache: pnpm
 
       - run: pnpm install
@@ -39,7 +39,7 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add nuxt/public/slides
-          git add nuxt/public/slides.json
+          git add -f nuxt/public/slides
+          git add -f nuxt/public/slides.json
           git commit -m "chore: update slides assets" || echo "No changes"
           git push origin HEAD:deploy --force

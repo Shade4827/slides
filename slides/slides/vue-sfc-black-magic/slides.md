@@ -108,6 +108,7 @@ transition: slide-left
 <br>
 
 <div class="grid grid-cols-2 gap-4">
+
 ```vue
 /* SampleComponent.vue */
 <template>

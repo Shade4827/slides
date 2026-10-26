@@ -10,50 +10,42 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/icon',
-    'reka-ui/nuxt',
-  ],
+  modules: ['@nuxt/eslint', '@nuxt/icon', 'reka-ui/nuxt'],
   nitro: {
-    preset: 'cloudflare-pages'
+    preset: 'cloudflare-pages',
   },
   routeRules: {
     '/slides/**': {
-      static: true
-    }
+      static: true,
+    },
   },
   runtimeConfig: {
     public: {
       siteUrl: siteUrl,
-    }
+    },
   },
-  components : {
-    dirs: [
-      '~/components',
-      '~/components/demo',
-    ],
+  components: {
+    dirs: ['~/components', '~/components/demo'],
   },
   app: {
     head: {
       title: 'slides.shade4827.net',
       htmlAttrs: {
-        lang: 'ja', prefix: 'og: https://ogp.me/ns#'
+        lang: 'ja',
+        prefix: 'og: https://ogp.me/ns#',
       },
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
       meta: [
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'slides.shade4827.net' },
-        { property: 'og:image', content: `${siteUrl}/og-image.png`, },
+        { property: 'og:image', content: `${siteUrl}/og-image.png` },
         { property: 'og:locale', content: 'ja_JP' },
         { property: 'og:title', content: 'slides.shade4827.net' },
         { property: 'og:description', content: 'かげろんのスライド一覧です' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@shade4827' },
         { name: 'twitter:title', content: 'slides.shade4827.net' },
-      ]
-    }
+      ],
+    },
   },
 })
