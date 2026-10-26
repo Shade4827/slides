@@ -10,16 +10,6 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  hooks: {
-    // vite-plus-core copies server.hmr.server onto server.ws. Nuxt 4.4 then
-    // attaches that shared HTTP server to both Vite dev servers, so the second
-    // upgrade handler throws. Keep the SSR server off the client HMR socket.
-    'vite:extendConfig'(config, { isServer }) {
-      if (!isServer || !config.server) return
-      config.server.hmr = false
-      config.server.ws = false
-    },
-  },
   modules: ['@nuxt/eslint', '@nuxt/icon', 'reka-ui/nuxt'],
   nitro: {
     preset: 'cloudflare-pages',
