@@ -39,7 +39,7 @@ const open = ref(false)
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 .content {
   position: fixed;

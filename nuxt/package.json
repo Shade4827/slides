@@ -1,6 +1,5 @@
 {
   "name": "nuxt",
-  "packageManager": "pnpm@11.17.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -32,5 +31,6 @@
     "rolldown": "~1.2.15",
     "typescript": "^5.9.3",
     "vite-plus": "catalog:"
-  }
+  },
+  "packageManager": "pnpm@11.17.0"
 }

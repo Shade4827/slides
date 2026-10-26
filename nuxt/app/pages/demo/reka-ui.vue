@@ -1,8 +1,6 @@
 <script setup lang="ts">
 useHead({
-  meta: [
-    { name: 'robots', content: 'noindex, nofollow' }
-  ]
+  meta: [{ name: 'robots', content: 'noindex, nofollow' }],
 })
 
 const query = ref('')
@@ -13,6 +11,6 @@ const query = ref('')
     <h1 class="text-3xl font-bold">Reka UI Demo</h1>
     <RekaDialog />
     <RekaSuggest />
-    <RekaAsChild v-model="query"/>
+    <RekaAsChild v-model="query" />
   </div>
 </template>

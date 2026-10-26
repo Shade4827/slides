@@ -13,7 +13,7 @@ const { apiFetch } = useApiFetch()
 const { data: slide } = await useAsyncData('slide-detail', async () => {
   const slides = await apiFetch<SlideCard[]>(`/slides.json?t=${Date.now()}`)
 
-  const found: SlideCard | undefined  = slides.find((s: SlideCard) => s.id === route.params.slideId)
+  const found: SlideCard | undefined = slides.find((s: SlideCard) => s.id === route.params.slideId)
 
   if (!found) {
     throw createError({ statusCode: 404 })
@@ -23,12 +23,12 @@ const { data: slide } = await useAsyncData('slide-detail', async () => {
 })
 
 const formatedDateString = computed<string | undefined>(() => {
-  if(!slide.value?.date) return undefined
+  if (!slide.value?.date) return undefined
   const date = new Date(slide.value?.date)
   return date.toLocaleDateString('ja-JP', {
     year: 'numeric',
     month: '2-digit',
-    day: '2-digit'
+    day: '2-digit',
   })
 })
 
@@ -54,7 +54,7 @@ useHead({
     {
       name: 'twitter:title',
       content: slide.value?.title || '',
-    }
+    },
   ],
 })
 </script>
@@ -69,12 +69,7 @@ useHead({
     <p class="text-lg text-gray-400 mb-6">{{ slide?.info }}</p>
     <div class="w-full max-w-5xl mx-auto mb-4">
       <div class="aspect-video w-full">
-        <iframe
-          v-if="slideUrl"
-          :key="slideUrl"
-          :src="slideUrl"
-          class="w-full h-full shadow-lg"
-        />
+        <iframe v-if="slideUrl" :key="slideUrl" :src="slideUrl" class="w-full h-full shadow-lg" />
       </div>
     </div>
   </div>

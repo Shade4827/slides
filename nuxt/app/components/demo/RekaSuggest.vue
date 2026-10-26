@@ -6,7 +6,7 @@ interface Item {
 
 const items = Array.from({ length: 10000 }).map<Item>((_, i) => ({
   id: i,
-  label: `Item ${i}`
+  label: `Item ${i}`,
 }))
 
 const inputValue = ref('')
@@ -14,30 +14,19 @@ const selectedValue = ref<Item | null>(null)
 
 const filteredItems = computed(() => {
   if (!inputValue.value) return items
-  return items.filter(item =>
-    item.label.toLowerCase().includes(inputValue.value.toLowerCase())
-  )
+  return items.filter((item) => item.label.toLowerCase().includes(inputValue.value.toLowerCase()))
 })
 </script>
 
 <template>
   <section>
     <div class="flex items-center mb-3">
-      <h2 class="text-xl font-semibold">
-        2. サジェスト機能(Combobox)
-      </h2>
-      <OpenNewTabIcon
-        url="https://reka-ui.com/docs/guides/virtualization" 
-        class="ml-2 mt-2"
-      />
+      <h2 class="text-xl font-semibold">2. サジェスト機能(Combobox)</h2>
+      <OpenNewTabIcon url="https://reka-ui.com/docs/guides/virtualization" class="ml-2 mt-2" />
     </div>
 
     <ComboboxRoot v-model="selectedValue">
-      <ComboboxInput
-        v-model="inputValue"
-        placeholder="入力してください"
-        class="input"
-      />
+      <ComboboxInput v-model="inputValue" placeholder="入力してください" class="input" />
 
       <ComboboxContent class="dropdown">
         <ComboboxViewport class="max-h-80 overflow-y-auto">
@@ -60,9 +49,7 @@ const filteredItems = computed(() => {
       </ComboboxContent>
     </ComboboxRoot>
 
-    <p class="mt-2">
-      選択値: {{ selectedValue?.label ?? 'なし' }}
-    </p>
+    <p class="mt-2">選択値: {{ selectedValue?.label ?? 'なし' }}</p>
   </section>
 </template>
 

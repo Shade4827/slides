@@ -5,7 +5,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: '2em'
+  size: '2em',
 })
 const copied = ref(false)
 
@@ -14,7 +14,7 @@ const copyLink = async () => {
     if (copied.value) return
 
     await navigator.clipboard.writeText(`${window.location.origin}/slide-view/${props.link}`)
-    
+
     copied.value = true
     setTimeout(() => {
       copied.value = false
