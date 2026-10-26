@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import type { SlideCard } from '~/types/SlideCard'
+const { data: slides, error } = await useSlides()
 
-const { apiFetch } = useApiFetch()
+if (error.value) {
+  throw error.value
+}
 
-const { data: slides } = await useAsyncData('slide-list', async () => {
-  const slides = await apiFetch<SlideCard[]>(`/slides.json?t=${Date.now()}`)
-
-  return slides.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-})
+const sortedSlides = computed(() =>
+  [...(slides.value ?? [])].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+)
 </script>
 
 <template>
   <section>
     <div class="mb-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <SlideCard v-for="(slide, index) in slides" :key="index" :slide-card="slide" />
+      <SlideCard v-for="(slide, index) in sortedSlides" :key="index" :slide-card="slide" />
     </div>
   </section>
 </template>

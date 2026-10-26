@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { SlideCard } from '~/types/SlideCard'
 const route = useRoute()
 const config = useRuntimeConfig()
 
@@ -8,19 +7,17 @@ const slideUrl = computed(() => {
   return `/slides/${route.params.slideId}?t=${Date.now()}/`
 })
 
-const { apiFetch } = useApiFetch()
+const { data: slides, error } = await useSlides()
 
-const { data: slide } = await useAsyncData('slide-detail', async () => {
-  const slides = await apiFetch<SlideCard[]>(`/slides.json?t=${Date.now()}`)
+if (error.value) {
+  throw error.value
+}
 
-  const found: SlideCard | undefined = slides.find((s: SlideCard) => s.id === route.params.slideId)
+const slide = computed(() => slides.value?.find((item) => item.id === route.params.slideId))
 
-  if (!found) {
-    throw createError({ statusCode: 404 })
-  }
-
-  return found
-})
+if (!slide.value) {
+  throw createError({ statusCode: 404 })
+}
 
 const formatedDateString = computed<string | undefined>(() => {
   if (!slide.value?.date) return undefined
