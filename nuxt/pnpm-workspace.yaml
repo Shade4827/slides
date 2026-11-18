@@ -4,10 +4,13 @@ allowBuilds:
   unrs-resolver: true
   workerd: true
 catalog:
-  vite: npm:@voidzero-dev/vite-plus-core@1.4.0
-  vite-plus: 1.4.0
+  vite-plus: 1.7.0
 overrides:
-  vite@*: 'catalog:'
+  # GHSA-p4f5-76q4-ffq7: every resolved `vite` package, including transitive peers
+  # that the Vite+ core alias does not replace, must be the patched 8.3.8 release.
+  vite: "8.3.8"
+  # vite-plus 1.7.0 ships the same patched Vite as @voidzero-dev/vite-plus-core@8.3.8000.
+  "vite-plus>vite": "npm:@voidzero-dev/vite-plus-core@8.3.8000"
 peerDependencyRules:
   allowAny:
     - vite
