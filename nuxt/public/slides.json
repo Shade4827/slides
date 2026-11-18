@@ -1,0 +1,34 @@
+[
+  {
+    "id": "reka-ui-demo",
+    "title": "Reka UI触ってみる",
+    "link": "reka-ui-demo",
+    "thumbnail": "/slides/reka-ui-demo/thumbnail/1.png",
+    "info": "Vueバージョンアップで発生したライブラリ変更の際に、選定しなかったReka UIについて実際に触ってみます。",
+    "date": "2026-04-27T00:00:00.000Z"
+  },
+  {
+    "id": "slide-host",
+    "title": "Nuxt + SlidevでスライドをWeb上に公開する",
+    "link": "slide-host",
+    "thumbnail": "/slides/slide-host/thumbnail/1.png",
+    "info": "このサイトの作成した動機やその際の課題点などをまとめました",
+    "date": "2026-03-29T00:00:00.000Z"
+  },
+  {
+    "id": "vue-sfc-black-magic",
+    "title": "Vue SFC slottedの黒魔術を理解する",
+    "link": "vue-sfc-black-magic",
+    "thumbnail": "/slides/vue-sfc-black-magic/thumbnail/1.png",
+    "info": "styleタグに:slottedと書いただけでCSSファイル内で使用可能になる現象に遭遇しました。Vue SFCのコンパイラがどのように解釈しているのかを追って、なぜこうなったかを理解します。",
+    "date": "2026-06-20T00:00:00.000Z"
+  },
+  {
+    "id": "why-choose-sapporo",
+    "title": "田舎から札幌に移住して半年",
+    "link": "why-choose-sapporo",
+    "thumbnail": "/slides/why-choose-sapporo/thumbnail/1.png",
+    "info": "札幌市ビジネスセッション＆交流会「エンジニアはなぜ札幌を選ぶのか ～人と企業が動く理由～」で、田舎から札幌市に移住したエンジニアとして登壇",
+    "date": "2026-01-30T00:00:00.000Z"
+  }
+]
